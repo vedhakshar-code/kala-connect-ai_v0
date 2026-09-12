@@ -1,0 +1,126 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Brand tokens */
+  --color-saffron: var(--saffron);
+  --color-saffron-light: var(--saffron-light);
+  --color-terracotta: var(--terracotta);
+  --color-maroon: var(--maroon);
+  --color-gold: var(--gold);
+  --color-cream: var(--cream);
+  --color-peacock: var(--peacock);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --font-sans: var(--font-body);
+  --font-serif: var(--font-display);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+}
+
+:root {
+  color-scheme: light;
+
+  /* Palette
+     Saffron #E65100 / #FF9800, Terracotta #BF360C, Deep Maroon #880E4F,
+     Turmeric Gold #FFC107, Warm Cream #FFF8E1, Peacock Blue #01579B */
+  --saffron: #e65100;
+  --saffron-light: #ff9800;
+  --terracotta: #bf360c;
+  --maroon: #880e4f;
+  --gold: #ffc107;
+  --cream: #fff8e1;
+  --peacock: #01579b;
+
+  --background: #fff8e1;
+  --foreground: #3a1608;
+
+  --card: #fffdf6;
+  --card-foreground: #3a1608;
+  --popover: #fffdf6;
+  --popover-foreground: #3a1608;
+
+  --primary: #e65100;
+  --primary-foreground: #fff8e1;
+
+  --secondary: #880e4f;
+  --secondary-foreground: #fff8e1;
+
+  --muted: #f3e6c8;
+  --muted-foreground: #8a5a3b;
+
+  --accent: #ffc107;
+  --accent-foreground: #3a1608;
+
+  --destructive: #bf360c;
+  --destructive-foreground: #fff8e1;
+
+  --border: #e7d3a8;
+  --input: #e7d3a8;
+  --ring: #e65100;
+
+  --chart-1: #e65100;
+  --chart-2: #880e4f;
+  --chart-3: #01579b;
+  --chart-4: #ffc107;
+  --chart-5: #bf360c;
+
+  --radius: 0.75rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .bg-craft-pattern {
+    background-color: var(--cream);
+    background-image: radial-gradient(
+        circle at 1px 1px,
+        color-mix(in srgb, var(--saffron) 22%, transparent) 1.5px,
+        transparent 0
+      );
+    background-size: 22px 22px;
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+}
